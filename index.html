@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Natural Tierra Sabia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <h1>Tierra Sabia</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#" onclick="mostrarSeccion('catalogo')">Catálogo</a></li>
+                <li><a href="#" onclick="mostrarSeccion('nosotros')">Nosotros</a></li>
+                <li><a href="#" onclick="mostrarSeccion('contactenos')">Contáctenos</a></li>
+            </ul>
+            <button id="verCarrito" onclick="mostrarCarrito()">Ver Carrito (0)</button>
+        </nav>
+    </header>
+
+    <!-- Carrusel de Promociones -->
+    <section id="promociones">
+        <div class="carousel">
+            <button class="prev" onclick="showPrevImage()">&#10094;</button>
+            <img src="Imagenes/promo1.webp" alt="Promoción 1" class="active">
+            <img src="Imagenes/promo2.webp" alt="Promoción 2">
+            <img src="Imagenes/promo3.webp" alt="Promoción 3">
+            <button class="next" onclick="showNextImage()">&#10095;</button>
+        </div>
+    </section>
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="seccion-contenido">
+        <h2>Bienvenidos a Tierra Sabia</h2>
+        <p>Nos complace darte la bienvenida a Tierra Sabia, tu tienda de confianza para productos naturales. Aquí,
+            creemos en la belleza auténtica y en el cuidado del cuerpo con ingredientes de la más alta calidad,
+            extraídos directamente de la naturaleza. Nos enorgullece ofrecerte productos que no solo te harán lucir
+            bien, sino que también te harán sentir bien, todo mientras respetamos nuestro planeta.</p>
+
+        <img src="Imagenes/bienvenida.webp" alt="Bienvenida a Tierra Sabia" class="imagen-bienvenida">
+
+        <h3>¿Por qué elegir productos naturales?</h3>
+        <ul class="lista-razones">
+            <li><strong>Ingredientes Libres de Químicos:</strong> Los productos naturales están elaborados sin el uso de
+                químicos agresivos, lo que significa menos irritación para tu piel y menos riesgo de reacciones
+                alérgicas.</li>
+            <li><strong>Sostenibilidad Ambiental:</strong> Al elegir productos naturales, contribuyes a la reducción de
+                residuos químicos y apoyas prácticas agrícolas sostenibles.</li>
+            <li><strong>Ricos en Nutrientes:</strong> Los ingredientes naturales, como aceites esenciales y extractos de
+                plantas, están llenos de vitaminas y minerales que nutren tu piel y cabello.</li>
+            <li><strong>Resultados Efectivos y Suaves:</strong> A diferencia de los productos convencionales, los
+                naturales son suaves pero efectivos, proporcionando resultados visibles sin efectos secundarios nocivos.
+            </li>
+            <li><strong>Respeto por la Vida:</strong> Muchos productos naturales son cruelty-free, lo que significa que
+                no han sido probados en animales.</li>
+        </ul>
+
+        <img src="Imagenes/productos_naturales.webp" alt="Productos Naturales" class="imagen-razones">
+
+        <h3>Tips para Incorporar Productos Naturales en tu Rutina</h3>
+        <ol class="lista-tips">
+            <li><strong>Conoce tu Piel y Cabello:</strong> Identifica tu tipo de piel y cabello para elegir los
+                productos naturales que mejor se adapten a tus necesidades específicas.</li>
+            <li><strong>Comienza con lo Básico:</strong> Empieza con un buen jabón natural y un champú sólido. Estos
+                productos pueden tener un gran impacto positivo en tu piel y cabello desde el primer uso.</li>
+            <li><strong>Lee las Etiquetas:</strong> Familiarízate con los ingredientes naturales más beneficiosos, como
+                el aceite de coco, la manteca de karité, y el aloe vera.</li>
+            <li><strong>Haz Pruebas de Parche:</strong> Siempre realiza una prueba de parche antes de usar un nuevo
+                producto natural para asegurarte de que no tendrás reacciones alérgicas.</li>
+            <li><strong>Se Paciente:</strong> Los productos naturales pueden tomar un poco más de tiempo para mostrar
+                resultados, pero son gentiles y mejores a largo plazo para tu piel y cabello.</li>
+        </ol>
+
+        <img src="Imagenes/tips_productos_naturales.webp" alt="Tips para usar productos naturales" class="imagen-tips">
+
+        <p>Te invitamos a explorar nuestra tienda y descubrir el mundo de los productos naturales. Estamos aquí para
+            ayudarte a encontrar lo que necesitas para sentirte bien y cuidar de ti de una manera más saludable y
+            respetuosa con el medio ambiente.</p>
+    </section>
+
+
+    <!-- Sección de Catálogo -->
+    <section id="catalogo" class="seccion-contenido" style="display:none;">
+        <h2 class="menu-title">Nuestros Productos</h2>
+        <!-- Jabón Corporal -->
+        <h3 class="menu-section">Jabón Corporal</h3>
+        <div class="grid-container">
+            <!-- Jabón de Avena y Miel -->
+            <div class="grid-item">
+                <img src="Imagenes/jabon_avena_miel.webp" alt="Jabón de Avena y Miel"
+                    onclick="mostrarDescripcion('Jabon_de_Avena_y_Miel')">
+                <h4>Jabón de Avena y Miel</h4>
+                <p>$5.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Jabón de Avena y Miel', 5.99)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Jabón de Aceite de Coco y Lavanda -->
+            <div class="grid-item">
+                <img src="Imagenes/jabon_coco_lavanda.webp" alt="Jabón de Aceite de Coco y Lavanda"
+                    onclick="mostrarDescripcion('Jabon_de_Coco_y_Lavanda')">
+                <h4>Jabón de Aceite de Coco y Lavanda</h4>
+                <p>$6.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Jabón de Aceite de Coco y Lavanda', 6.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Jabón de Té Verde y Menta -->
+            <div class="grid-item">
+                <img src="Imagenes/jabon_te_verde_menta.webp" alt="Jabón de Té Verde y Menta"
+                    onclick="mostrarDescripcion('Jabon_de_Te_Verde_y_Menta')">
+                <h4>Jabón de Té Verde y Menta</h4>
+                <p>$5.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Jabón de Té Verde y Menta', 5.49)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Jabón de Carbón Activado y Árbol de Té -->
+            <div class="grid-item">
+                <img src="Imagenes/jabon_carbon_arbol_te.webp" alt="Jabón de Carbón Activado y Árbol de Té"
+                    onclick="mostrarDescripcion('Jabon_de_Carbon_Activado_y_Arbol_de_Te')">
+                <h4>Jabón de Carbón Activado y Árbol de Té</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Jabón de Carbón Activado y Árbol de Té', 6.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Jabón de Leche de Cabra y Caléndula -->
+            <div class="grid-item">
+                <img src="Imagenes/jabon_leche_cabra_calendula.webp" alt="Jabón de Leche de Cabra y Caléndula"
+                    onclick="mostrarDescripcion('Jabon_de_Leche_de_Cabra_y_Calendula')">
+                <h4>Jabón de Leche de Cabra y Caléndula</h4>
+                <p>$7.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Jabón de Leche de Cabra y Caléndula', 7.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Jabón de Aloe Vera y Manzanilla -->
+            <div class="grid-item">
+                <img src="Imagenes/jabon_aloe_vera_manzanilla.webp" alt="Jabón de Aloe Vera y Manzanilla"
+                    onclick="mostrarDescripcion('Jabon_de_Aloe_Vera_y_Manzanilla')">
+                <h4>Jabón de Aloe Vera y Manzanilla</h4>
+                <p>$5.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Jabón de Aloe Vera y Manzanilla', 5.99)">Agregar al Carrito</button>
+            </div>
+
+        </div>
+        </div>
+        <hr>
+        <!-- Champú Sólido -->
+        <h3 class="menu-section">Champú Sólido</h3>
+        <div class="grid-container">
+            <!-- Champú Sólido de Romero y Menta -->
+            <div class="grid-item">
+                <img src="Imagenes/champu_romero_menta.webp" alt="Champú Sólido de Romero y Menta"
+                    onclick="mostrarDescripcion('Champu_Solido_de_Romero_y_Menta')">
+                <h4>Champú Sólido de Romero y Menta</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Champú Sólido de Romero y Menta', 6.99)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Champú Sólido de Manzanilla y Caléndula -->
+            <div class="grid-item">
+                <img src="Imagenes/champu_manzanilla_calendula.webp" alt="Champú Sólido de Manzanilla y Caléndula"
+                    onclick="mostrarDescripcion('Champu_Solido_de_Manzanilla_y_Calendula')">
+                <h4>Champú Sólido de Manzanilla y Caléndula</h4>
+                <p>$7.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Champú Sólido de Manzanilla y Caléndula', 7.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Champú Sólido de Carbón Activado y Árbol de Té -->
+            <div class="grid-item">
+                <img src="Imagenes/champu_carbon_arbol_te.webp" alt="Champú Sólido de Carbón Activado y Árbol de Té"
+                    onclick="mostrarDescripcion('Champu_Solido_de_Carbon_Activado_y_Arbol_de_Te')">
+                <h4>Champú Sólido de Carbón Activado y Árbol de Té</h4>
+                <p>$7.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Champú Sólido de Carbón Activado y Árbol de Té', 7.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Champú Sólido de Coco y Karité -->
+            <div class="grid-item">
+                <img src="Imagenes/champu_coco_karite.webp" alt="Champú Sólido de Coco y Karité"
+                    onclick="mostrarDescripcion('Champu_Solido_de_Coco_y_Karite')">
+                <h4>Champú Sólido de Coco y Karité</h4>
+                <p>$8.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Champú Sólido de Coco y Karité', 8.49)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Champú Sólido de Ortiga y Aloe Vera -->
+            <div class="grid-item">
+                <img src="Imagenes/champu_ortiga_aloe.webp" alt="Champú Sólido de Ortiga y Aloe Vera"
+                    onclick="mostrarDescripcion('Champu_Solido_de_Ortiga_y_Aloe_Vera')">
+                <h4>Champú Sólido de Ortiga y Aloe Vera</h4>
+                <p>$6.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Champú Sólido de Ortiga y Aloe Vera', 6.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Champú Sólido de Lavanda y Bergamota -->
+            <div class="grid-item">
+                <img src="Imagenes/champu_lavanda_bergamota.webp" alt="Champú Sólido de Lavanda y Bergamota"
+                    onclick="mostrarDescripcion('Champu_Solido_de_Lavanda_y_Bergamota')">
+                <h4>Champú Sólido de Lavanda y Bergamota</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Champú Sólido de Lavanda y Bergamota', 6.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+        </div>
+        <hr>
+
+        <!-- Acondicionado Sólido -->
+        <h3 class="menu-section">Acondicionado Sólido</h3>
+        <div class="grid-container">
+            <!-- Acondicionador Sólido de Manteca de Karité y Aceite de Coco -->
+            <div class="grid-item">
+                <img src="Imagenes/acondicionador_karite_coco.webp"
+                    alt="Acondicionador Sólido de Manteca de Karité y Aceite de Coco"
+                    onclick="mostrarDescripcion('Acondicionador_Solido_de_Karite_y_Coco')">
+                <h4>Acondicionador Sólido de Manteca de Karité y Aceite de Coco</h4>
+                <p>$7.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button
+                    onclick="agregarAlCarrito('Acondicionador Sólido de Manteca de Karité y Aceite de Coco', 7.99)">Agregar
+                    al Carrito</button>
+            </div>
+
+            <!-- Acondicionador Sólido de Argan y Lavanda -->
+            <div class="grid-item">
+                <img src="Imagenes/acondicionador_argan_lavanda.webp" alt="Acondicionador Sólido de Argan y Lavanda"
+                    onclick="mostrarDescripcion('Acondicionador_Solido_de_Argan_y_Lavanda')">
+                <h4>Acondicionador Sólido de Argan y Lavanda</h4>
+                <p>$8.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Acondicionador Sólido de Argan y Lavanda', 8.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Acondicionador Sólido de Aloe Vera y Caléndula -->
+            <div class="grid-item">
+                <img src="Imagenes/acondicionador_aloe_calendula.webp"
+                    alt="Acondicionador Sólido de Aloe Vera y Caléndula"
+                    onclick="mostrarDescripcion('Acondicionador_Solido_de_Aloe_y_Calendula')">
+                <h4>Acondicionador Sólido de Aloe Vera y Caléndula</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Acondicionador Sólido de Aloe Vera y Caléndula', 6.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Acondicionador Sólido de Jojoba y Menta -->
+            <div class="grid-item">
+                <img src="Imagenes/acondicionador_jojoba_menta.webp" alt="Acondicionador Sólido de Jojoba y Menta"
+                    onclick="mostrarDescripcion('Acondicionador_Solido_de_Jojoba_y_Menta')">
+                <h4>Acondicionador Sólido de Jojoba y Menta</h4>
+                <p>$7.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Acondicionador Sólido de Jojoba y Menta', 7.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Acondicionador Sólido de Mango y Papaya -->
+            <div class="grid-item">
+                <img src="Imagenes/acondicionador_mango_papaya.webp" alt="Acondicionador Sólido de Mango y Papaya"
+                    onclick="mostrarDescripcion('Acondicionador_Solido_de_Mango_y_Papaya')">
+                <h4>Acondicionador Sólido de Mango y Papaya</h4>
+                <p>$8.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Acondicionador Sólido de Mango y Papaya', 8.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Acondicionador Sólido de Romero y Té Verde -->
+            <div class="grid-item">
+                <img src="Imagenes/acondicionador_romero_te_verde.webp" alt="Acondicionador Sólido de Romero y Té Verde"
+                    onclick="mostrarDescripcion('Acondicionador_Solido_de_Romero_y_Te_Verde')">
+                <h4>Acondicionador Sólido de Romero y Té Verde</h4>
+                <p>$7.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Acondicionador Sólido de Romero y Té Verde', 7.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+        </div>
+        <hr>
+        <!-- Desodorante -->
+        <h3 class="menu-section">Desodorante</h3>
+        <div class="grid-container">
+            <!-- Desodorante de Bicarbonato de Sodio y Aceite de Coco -->
+            <div class="grid-item">
+                <img src="Imagenes/desodorante_bicarbonato_coco.webp"
+                    alt="Desodorante de Bicarbonato de Sodio y Aceite de Coco"
+                    onclick="mostrarDescripcion('Desodorante_Bicarbonato_Coco')">
+                <h4>Desodorante de Bicarbonato de Sodio y Aceite de Coco</h4>
+                <p>$5.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Desodorante de Bicarbonato de Sodio y Aceite de Coco', 5.99)">Agregar
+                    al Carrito</button>
+            </div>
+
+            <!-- Desodorante de Arcilla Bentonita y Árbol de Té -->
+            <div class="grid-item">
+                <img src="Imagenes/desodorante_arcilla_arbol_te.webp"
+                    alt="Desodorante de Arcilla Bentonita y Árbol de Té"
+                    onclick="mostrarDescripcion('Desodorante_Arcilla_Arbol_Te')">
+                <h4>Desodorante de Arcilla Bentonita y Árbol de Té</h4>
+                <p>$6.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Desodorante de Arcilla Bentonita y Árbol de Té', 6.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Desodorante de Lavanda y Manzanilla -->
+            <div class="grid-item">
+                <img src="Imagenes/desodorante_lavanda_manzanilla.webp" alt="Desodorante de Lavanda y Manzanilla"
+                    onclick="mostrarDescripcion('Desodorante_Lavanda_Manzanilla')">
+                <h4>Desodorante de Lavanda y Manzanilla</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Desodorante de Lavanda y Manzanilla', 6.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Desodorante de Karité y Caléndula -->
+            <div class="grid-item">
+                <img src="Imagenes/desodorante_karite_calendula.webp" alt="Desodorante de Karité y Caléndula"
+                    onclick="mostrarDescripcion('Desodorante_Karite_Calendula')">
+                <h4>Desodorante de Karité y Caléndula</h4>
+                <p>$7.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Desodorante de Karité y Caléndula', 7.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Desodorante de Carbón Activado y Menta -->
+            <div class="grid-item">
+                <img src="Imagenes/desodorante_carbon_menta.webp" alt="Desodorante de Carbón Activado y Menta"
+                    onclick="mostrarDescripcion('Desodorante_Carbon_Menta')">
+                <h4>Desodorante de Carbón Activado y Menta</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Desodorante de Carbón Activado y Menta', 6.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Desodorante de Sándalo y Romero -->
+            <div class="grid-item">
+                <img src="Imagenes/desodorante_sandalo_romero.webp" alt="Desodorante de Sándalo y Romero"
+                    onclick="mostrarDescripcion('Desodorante_Sandalo_Romero')">
+                <h4>Desodorante de Sándalo y Romero</h4>
+                <p>$7.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Desodorante de Sándalo y Romero', 7.99)">Agregar al Carrito</button>
+            </div>
+
+        </div>
+        <hr>
+        <!-- Brillo Labial -->
+        <h3 class="menu-section">Brillo Labial</h3>
+        <div class="grid-container">
+            <!-- Brillo Labial de Manteca de Karité y Miel -->
+            <div class="grid-item">
+                <img src="Imagenes/brillo_karite_miel.webp" alt="Brillo Labial de Manteca de Karité y Miel"
+                    onclick="mostrarDescripcion('Brillo_Labial_de_Karite_y_Miel')">
+                <h4>Brillo Labial de Manteca de Karité y Miel</h4>
+                <p>$4.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Brillo Labial de Manteca de Karité y Miel', 4.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Brillo Labial de Aceite de Coco y Menta -->
+            <div class="grid-item">
+                <img src="Imagenes/brillo_coco_menta.webp" alt="Brillo Labial de Aceite de Coco y Menta"
+                    onclick="mostrarDescripcion('Brillo_Labial_de_Coco_y_Menta')">
+                <h4>Brillo Labial de Aceite de Coco y Menta</h4>
+                <p>$5.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Brillo Labial de Aceite de Coco y Menta', 5.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Brillo Labial de Cera de Abeja y Vainilla -->
+            <div class="grid-item">
+                <img src="Imagenes/brillo_cera_vainilla.webp" alt="Brillo Labial de Cera de Abeja y Vainilla"
+                    onclick="mostrarDescripcion('Brillo_Labial_de_Cera_de_Abeja_y_Vainilla')">
+                <h4>Brillo Labial de Cera de Abeja y Vainilla</h4>
+                <p>$5.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Brillo Labial de Cera de Abeja y Vainilla', 5.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Brillo Labial de Frambuesa y Granada -->
+            <div class="grid-item">
+                <img src="Imagenes/brillo_frambuesa_granada.webp" alt="Brillo Labial de Frambuesa y Granada"
+                    onclick="mostrarDescripcion('Brillo_Labial_de_Frambruesa_y_Granada')">
+                <h4>Brillo Labial de Frambuesa y Granada</h4>
+                <p>$6.49</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Brillo Labial de Frambuesa y Granada', 6.49)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Brillo Labial de Lavanda y Miel de Manuka -->
+            <div class="grid-item">
+                <img src="Imagenes/brillo_lavanda_miel_manuka.webp" alt="Brillo Labial de Lavanda y Miel de Manuka"
+                    onclick="mostrarDescripcion('Brillo_Labial_de_Lavanda_y_Miel_de_Manuka')">
+                <h4>Brillo Labial de Lavanda y Miel de Manuka</h4>
+                <p>$5.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Brillo Labial de Lavanda y Miel de Manuka', 5.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+            <!-- Brillo Labial de Almendra y Rosa Mosqueta -->
+            <div class="grid-item">
+                <img src="Imagenes/brillo_almendra_rosa_mosqueta.webp" alt="Brillo Labial de Almendra y Rosa Mosqueta"
+                    onclick="mostrarDescripcion('Brillo_Labial_de_Almendra_y_Rosa_Mosqueta')">
+                <h4>Brillo Labial de Almendra y Rosa Mosqueta</h4>
+                <p>$6.99</p>
+                <input type="number" min="1" max="10" value="1" class="cantidad">
+                <button onclick="agregarAlCarrito('Brillo Labial de Almendra y Rosa Mosqueta', 6.99)">Agregar al
+                    Carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Sección de Nosotros -->
+    <section id="nosotros" class="seccion-contenido" style="display:none;">
+        <h2>Nosotros</h2>
+
+        <!-- Bienvenida a la tienda virtual -->
+        <p>Bienvenido a Tierra Sabia, tu tienda virtual de productos naturales y ecológicos. Nos dedicamos a ofrecerte
+            una amplia gama de productos que están cuidadosamente seleccionados para tu bienestar y el de nuestro
+            planeta. Creemos en la importancia de regresar a lo esencial, utilizando ingredientes que la naturaleza nos
+            brinda y promoviendo un estilo de vida más saludable y sostenible. Navega por nuestra tienda y descubre
+            productos que no solo son buenos para ti, sino también para el medio ambiente.</p>
+
+        <!-- Imagen de bienvenida -->
+        <img src="Imagenes/nosotros_bienvenida.webp" alt="Bienvenida a nuestra tienda virtual" class="imagen-nosotros">
+
+        <!-- Eslogan de la tienda -->
+        <h3>Eslogan</h3>
+        <p><strong>"Cuidando de ti, cuidando de la Tierra"</strong></p>
+
+        <!-- Imagen del eslogan -->
+        <img src="Imagenes/eslogan.webp" alt="Eslogan de Tierra Sabia" class="imagen-nosotros">
+
+        <!-- Misión de la tienda -->
+        <h3>Misión</h3>
+        <p>Nuestra misión en Tierra Sabia es proporcionar productos naturales y ecológicos que mejoren la salud y el
+            bienestar de nuestros clientes, mientras promovemos la sostenibilidad y el respeto por el medio ambiente.
+            Nos esforzamos por ofrecer una experiencia de compra en línea que sea accesible, informativa y consciente,
+            permitiendo a nuestros clientes tomar decisiones más saludables para ellos y para el planeta. A través de
+            nuestro compromiso con la calidad y la transparencia, aspiramos a educar e inspirar a nuestros clientes
+            sobre los beneficios de los productos naturales y el impacto positivo de un estilo de vida ecológico.</p>
+
+        <!-- Imagen de la misión -->
+        <img src="Imagenes/mision.webp" alt="Nuestra misión" class="imagen-nosotros">
+
+        <!-- Visión de la tienda -->
+        <h3>Visión</h3>
+        <p>En Tierra Sabia, nuestra visión es ser el líder mundial en la venta de productos naturales y ecológicos,
+            conocidos por nuestra pasión por la sostenibilidad y nuestra dedicación a la excelencia en cada aspecto de
+            nuestro negocio. Queremos ser una fuente confiable para aquellos que buscan productos naturales auténticos y
+            de alta calidad, y un referente en la promoción de un estilo de vida más consciente y sostenible. Nuestro
+            objetivo es crear una comunidad global de consumidores informados y comprometidos que valoren tanto su
+            bienestar personal como el del planeta, impulsando un cambio positivo en el mundo a través de la elección de
+            productos más naturales y ecológicos.</p>
+
+        <!-- Imagen de la visión -->
+        <img src="Imagenes/vision.webp" alt="Nuestra visión" class="imagen-nosotros">
+    </section>
+
+
+    <!-- Sección de Contáctenos -->
+    <section id="contactenos" class="seccion-contenido" style="display:none;">
+        <h2>Contáctenos</h2>
+        <form action="enviar_formulario.php" method="post" class="contact-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+        
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        
+            <button type="submit" class="btn-submit">Enviar</button>
+        </form>        
+    </section>
+
+
+    <!-- Ventana Modal para Descripción de Producto -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <img id="modalImagen" src="" alt="Imagen del Producto"
+                style="width: 100%; max-width: 200px; height: auto;" />
+            <h4 id="modalTitulo">Título del Producto</h4>
+            <p id="modalDescripcion">Descripción del Producto</p>
+            <p id="modalPrecio">Precio: $0.00</p>
+        </div>
+    </div>
+
+    <!-- Ventana Modal para Ver Carrito -->
+    <div id="modalCarrito" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarCarrito()">&times;</span>
+            <h3>Carrito de Compras</h3>
+            <ul id="carritoLista"></ul>
+            <p id="totalCarrito">Total: $0.00</p>
+            <button id="cancelarPedido" onclick="cancelarPedido()">Cancelar Pedido</button>
+            <button id="pagar">Pagar</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2024 Tierra Sabia. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
